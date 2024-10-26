@@ -16,6 +16,88 @@ Location: Kukatpally, Hyderabad, Telengana
 Notable programs: Computer Science, Engineering, Business, Medicine
 Student population: 20,000
 
+Computer Science Department (CSE)
+Description: This is Our Department
+URL: https://maps.google.com/?q=17.493151222175904,78.39227845034713
+
+Auditorium
+Description: This is an Auditorium
+URL: https://maps.google.com/?q=17.491934965193217,78.39155620052485
+
+Classroom Complex (CRC)
+Description: This is a classroom for all first-year students
+URL: https://maps.google.com/?q=17.493072520469138,78.39123143495418
+
+Civil Department
+Description: This is Civil Department
+URL: https://maps.google.com/?q=17.494827055645057,78.39035603931258
+
+Mechanical Department
+Description: This is Mechanical Department
+URL: https://maps.google.com/?q=17.49444038944259,78.39116207230877
+
+Electrical and Electronics Communication Department (ECE)
+Description: This is ECE Department
+URL: https://maps.google.com/?q=17.493648919184682,78.39239755800763
+
+School of Information Technology (SIT)
+Description: This is School of Information Technology
+URL: https://maps.google.com/?q=17.494645205773796,78.39221232141526
+
+Library
+Description: This is Library
+URL: https://maps.google.com/?q=17.49548793324025,78.39137668305989
+
+Administration Department
+Description: This is Administration Department
+URL: https://maps.google.com/?q=17.49643943695675,78.39245290193816
+
+Metallurgy Department
+Description: This is Metallurgy Department
+URL: https://maps.google.com/?q=17.495842240036183,78.39173944110695
+
+Examination Branch
+Description: This is Examination Branch
+URL: https://maps.google.com/?q=17.495982456319314,78.39220224592374
+
+UGC
+Description: This is UGC
+URL: https://maps.google.com/?q=17.495804488013018,78.39331284907593
+
+EEE Department
+Description: This is EEE Department
+URL: https://maps.google.com/?q=17.495147437680277,78.39117747987686
+
+JHUB
+Description: This is JHUB
+URL: https://maps.google.com/?q=17.4936196040711,78.3931051692599
+
+Gowthami Boys Hostel
+Description: This is Gowthami Boys Hostel
+URL: https://maps.google.com/?q=17.49175821828631,78.38850247961263
+
+Manjeera Boys Hostel
+Description: This is Manjeera Boys Hostel
+URL: https://maps.google.com/?q=17.491196318907352,78.38820862861242
+
+Kinnera Boys Hostel
+Description: This is Kinnera Boys Hostel
+URL: https://maps.google.com/?q=17.490371114696714,78.38841395108149
+
+International Students Hostel
+Description: This is International Students Hostel
+URL: https://maps.google.com/?q=17.490179068812814,78.38926053297001
+
+RSQ2 Hostel
+Description: This is RSQ2 Hostel
+URL: https://maps.google.com/?q=17.48988646114701,78.38966029073153
+
+
+
+
+
+
+
 
 `
 
