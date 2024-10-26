@@ -94,6 +94,13 @@ URL: https://maps.google.com/?q=17.48988646114701,78.38966029073153
 
 
 
+Current Principal:Dr. G Venkata Narasimha Reddy
+B.Tech.(RECW), M.Tech.(KREC), Ph.D.(JNTUH), Post Doc.(FIU, USA),MIGS, AMIE, MISTE, C. Eng, MISSMGE
+Professor of Civil Engineering and Principal
+
+Current Vice Chancellor : Professor Katta Narasimha Reddy is the Vice-Chancellor of Jawaharlal Nehru Technological University (JNTU) in Hyderabad as of July 2021. The Governor of Telangana is the university's Chancellor. 
+
+
 
 
 
