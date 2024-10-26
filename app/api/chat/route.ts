@@ -101,6 +101,7 @@ Professor of Civil Engineering and Principal
 Current Vice Chancellor : Professor Katta Narasimha Reddy is the Vice-Chancellor of Jawaharlal Nehru Technological University (JNTU) in Hyderabad as of July 2021. The Governor of Telangana is the university's Chancellor. 
 
 
+Head of the Department Department of Civil Engineering: Dr. B Dean Kumar
 
 
 
