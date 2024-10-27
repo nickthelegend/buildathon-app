@@ -36,8 +36,9 @@ export default function ChatComponent() {
 
   const handleQuestionClick = (question: string) => {
     setInput(question);
-    handleSubmit(); // Call handleSubmit directly without passing an event
+    handleSubmit(event as unknown as React.FormEvent<HTMLFormElement>);
   };
+  
 
   return (
     <div className="flex h-screen flex-col md:flex-row bg-background text-foreground overflow-hidden">
