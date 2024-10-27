@@ -3,6 +3,7 @@
 import * as React from 'react'
 import { useChat } from 'ai/react'
 import { Menu, Send, MessageSquare, Settings, HelpCircle } from 'lucide-react'
+import ReactMarkdown from 'react-markdown';
 
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -96,7 +97,7 @@ export default function ChatComponent() {
                     : "bg-muted"
                 )}
               >
-                {message.content}
+                <ReactMarkdown>{message.content}</ReactMarkdown>
               </div>
             ))}
           </div>
