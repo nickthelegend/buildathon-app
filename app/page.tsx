@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import AudiowideText from '@/components/ui/AudioWideText'
 
 const prewrittenQuestions = [
   "What are the admission requirements?",
@@ -44,7 +45,8 @@ export default function ChatComponent() {
     <div className="flex h-screen flex-col md:flex-row bg-background text-foreground overflow-hidden">
       {/* Sidebar for larger screens */}
       <aside className="hidden md:flex flex-col w-64 p-4 border-r bg-white">
-        <h2 className="text-lg font-semibold mb-4">Vertex JNTU</h2>
+      <AudiowideText text="VERTEX" />
+
         <nav className="space-y-2">
           {sidebarItems.map((item, index) => (
             <Button key={index} variant="ghost" className="w-full justify-start">
