@@ -69,7 +69,7 @@ export default function ChatComponent() {
             </SheetTrigger>
             <SheetContent side="left" className="w-64 p-0">
               <div className="flex flex-col h-full p-4">
-                <h2 className="text-lg font-semibold mb-4">Vertex JNTU</h2>
+              <AudiowideText text="VERTEX" />
                 <nav className="space-y-2">
                   {sidebarItems.map((item, index) => (
                     <Button key={index} variant="ghost" className="w-full justify-start">

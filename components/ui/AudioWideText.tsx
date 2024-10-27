@@ -7,7 +7,7 @@ interface AudiowideTextProps {
 
 const AudiowideText: React.FC<AudiowideTextProps> = ({ text }) => {
     return (
-        <div style={{ fontFamily: 'Audiowide, sans-serif', fontSize: '32px' }}>
+        <div style={{ fontFamily: 'Audiowide, sans-serif', fontSize: '42px' , marginBottom:8}}>
             {text}
         </div>
     );
