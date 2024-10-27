@@ -23,7 +23,7 @@ const prewrittenQuestions = [
 export default function ChatComponent() {
   const { messages, input, handleInputChange, handleSubmit, setInput } = useChat()
   const scrollAreaRef = React.useRef<HTMLDivElement>(null)
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true)
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
   const [isDarkTheme, setIsDarkTheme] = React.useState(false)
 
   React.useEffect(() => {
@@ -35,7 +35,7 @@ export default function ChatComponent() {
   const sidebarItems = [
     { icon: MessageSquare, label: 'New Chat' },
     { icon: Settings, label: 'Settings' },
-    { icon: HelpCircle, label: 'Help', href: 'https://example.com' },
+    { icon: HelpCircle, label: 'Help', href: 'https://testingtesla7s-organization.gitbook.io/jntubot' },
   ]
 
   const handleQuestionClick = (question: string) => {
