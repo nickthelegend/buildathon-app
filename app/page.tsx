@@ -12,10 +12,10 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import AudiowideText from '@/components/ui/AudioWideText'
 
 const prewrittenQuestions = [
-  "What are the admission requirements?",
-  "How can I apply for scholarships?",
-  "What majors are offered?",
-  "When is the application deadline?",
+  "Who is the current Vice Chancellor of Our University?",
+  "When was JNTU established?",
+  "Where is CSE Department?",
+  "Who is the Head of CSE Department",
 ]
 
 export default function ChatComponent() {

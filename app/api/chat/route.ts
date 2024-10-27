@@ -16,6 +16,9 @@ Location: Kukatpally, Hyderabad, Telengana
 Notable programs: Computer Science, Engineering, Business, Medicine
 Student population: 20,000
 
+
+Provide the urls links when the user asks for Directions
+
 Computer Science Department (CSE)
 Description: This is Our Department
 URL: https://maps.google.com/?q=17.493151222175904,78.39227845034713
