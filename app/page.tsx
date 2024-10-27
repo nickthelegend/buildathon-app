@@ -10,8 +10,15 @@ import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
+const prewrittenQuestions = [
+  "What are the admission requirements?",
+  "How can I apply for scholarships?",
+  "What majors are offered?",
+  "When is the application deadline?",
+]
+
 export default function ChatComponent() {
-  const { messages, input, handleInputChange, handleSubmit } = useChat()
+  const { messages, input, handleInputChange, handleSubmit, setInput } = useChat()
   const scrollAreaRef = React.useRef<HTMLDivElement>(null)
   const [isSidebarOpen, setIsSidebarOpen] = React.useState(false)
 
@@ -26,6 +33,11 @@ export default function ChatComponent() {
     { icon: Settings, label: 'Settings' },
     { icon: HelpCircle, label: 'Help' },
   ]
+
+  const handleQuestionClick = (question: string) => {
+    setInput(question);
+    handleSubmit(); // Call handleSubmit directly without passing an event
+  };
 
   return (
     <div className="flex h-screen flex-col md:flex-row bg-background text-foreground overflow-hidden">
@@ -54,7 +66,7 @@ export default function ChatComponent() {
             </SheetTrigger>
             <SheetContent side="left" className="w-64 p-0">
               <div className="flex flex-col h-full p-4">
-                <h2 className="text-lg font-semibold mb-4">Gemini Chat AI</h2>
+                <h2 className="text-lg font-semibold mb-4">Vertex JNTU</h2>
                 <nav className="space-y-2">
                   {sidebarItems.map((item, index) => (
                     <Button key={index} variant="ghost" className="w-full justify-start">
@@ -86,6 +98,23 @@ export default function ChatComponent() {
             ))}
           </div>
         </ScrollArea>
+
+        {/* Prewritten questions */}
+        <div className="px-4 py-2 border-t bg-muted/50">
+          <h2 className="text-sm font-semibold mb-2">Frequently Asked Questions:</h2>
+          <div className="flex flex-wrap gap-2">
+            {prewrittenQuestions.map((question, index) => (
+              <Button
+                key={index}
+                variant="outline"
+                size="sm"
+                onClick={() => handleQuestionClick(question)}
+              >
+                {question}
+              </Button>
+            ))}
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className="flex items-center p-4 border-t">
           <Input
