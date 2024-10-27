@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Sun, Moon } from 'lucide-react'
+import { Sun, Moon, Link } from 'lucide-react'
+import AudiowideText from '@/components/ui/AudioWideText'
 
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -67,11 +68,16 @@ export default function Home() {
   return (
     <div className={`flex flex-col min-h-screen ${isDarkTheme ? 'dark bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
       <header className="p-4 flex justify-between items-center">
-        <span className="text-2xl font-bold">Vertex</span>
+        <AudiowideText text='VERTEX'/>
         <nav className="flex items-center">
-          <Button variant="link" className={isDarkTheme ? 'text-white' : 'text-gray-900'}>Home</Button>
-          <Button variant="link" className={isDarkTheme ? 'text-white' : 'text-gray-900'}>About</Button>
-          <Button variant="link" className={isDarkTheme ? 'text-white' : 'text-gray-900'}>Contact</Button>
+          {/* <Button variant="link" className={isDarkTheme ? 'text-white' : 'text-gray-900'}>Home</Button> */}
+          {/* <Button variant="link" className={isDarkTheme ? 'text-white' : 'text-gray-900'}>About</Button> */}
+
+
+          <a href='https://instagram.com/jquery.min.js'>
+          <Button variant="link" className={isDarkTheme ? 'text-white' : 'text-gray-900'}>  Contact </Button>
+
+          </a>
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
             {isDarkTheme ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
           </Button>
@@ -81,7 +87,7 @@ export default function Home() {
         <div className="max-w-4xl w-full space-y-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Welcome to Vertex</h1>
-            <p className="text-xl mb-8">The next generation AI chatbot for all your needs</p>
+            <p className="text-xl mb-8">Your Go-To Bot for All University Questions!</p>
           </div>
           <Tabs defaultValue="login" className="w-full max-w-md mx-auto">
             <TabsList className="grid w-full grid-cols-2">
@@ -138,7 +144,8 @@ export default function Home() {
         </div>
       </main>
       <footer className="p-4 text-center">
-        <p>&copy; 2024 Vertex. All rights reserved.</p>
+        <p>&copy; 2024 Vertex. By <a href="https://github.com/nickthelegend" className="underline text-blue-500">nickthelegend</a>
+        .</p>
       </footer>
     </div>
   )
