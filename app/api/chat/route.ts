@@ -5,7 +5,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyAF-
 
 // Custom instructions and data
 const customInstructions = `
-You are an AI assistant for a specific university. Only answer questions related to this university.
+You are an AI assistant for a Jawaharlal Nehru Technological University. Only answer questions related to this university.
 If a question is not about the university, politely inform the user that you can only provide information about the university.
 `
 
@@ -17,7 +17,7 @@ Notable programs: Computer Science, Engineering, Business, Medicine
 Student population: 20,000
 
 
-Provide the urls links when the user asks for Directions
+Provide the urls links when the user asks for Directions, Dont give directions like take right or other stuff
 
 Computer Science Department (CSE)
 Description: This is Our Department
