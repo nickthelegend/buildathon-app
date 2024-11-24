@@ -1,11 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import { GoogleGenerativeAIStream, StreamingTextResponse } from 'ai'
 
-<<<<<<< HEAD
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyA3kaq4p4aTgGALfLA6XgbiWJ1xpUVZ5fs')
-=======
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyALAJkf3rKlp9kagLpanYb2ZWXdHn-aOKE')
->>>>>>> 101568e55a50112c8a4cd0a8c29354a8c5cbf23d
 
 // Custom instructions and data
 const customInstructions = `
