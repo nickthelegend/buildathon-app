@@ -1,7 +1,11 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import { GoogleGenerativeAIStream, StreamingTextResponse } from 'ai'
 
+<<<<<<< HEAD
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyA3kaq4p4aTgGALfLA6XgbiWJ1xpUVZ5fs')
+=======
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyALAJkf3rKlp9kagLpanYb2ZWXdHn-aOKE')
+>>>>>>> 101568e55a50112c8a4cd0a8c29354a8c5cbf23d
 
 // Custom instructions and data
 const customInstructions = `
@@ -104,9 +108,40 @@ Professor of Civil Engineering and Principal
 Current Vice Chancellor : Professor Katta Narasimha Reddy is the Vice-Chancellor of Jawaharlal Nehru Technological University (JNTU) in Hyderabad as of July 2021. The Governor of Telangana is the university's Chancellor. 
 
 
-Head of the Department Department of Civil Engineering: Dr. B Dean Kumar
+Head of the Department of Civil Engineering: Dr. B Dean Kumar
 
+Head of the Department of Electrical and Electronics Engineering: Dr. K. Bhaskar
+
+Head of the Department of Mechanical Engineering: Dr. E Ramjee
+
+Head of Department of Electronics and Communication Engineering: Dr. A Rajani
+
+Head of Department of Computer Science and Engineering: Dr. K P Supreethi
+
+Head of Department of Metallurgical Engineering: Dr. B Ramesh Chandra
+
+Head of Department of Physics: Dr. T Srikanth
+
+Head of Department of Chemistry: Dr. Boodida Sathyanarayana
+
+Head of Department of Humanities and Social Sciences: Dr. N V S N Lakshmi
+
+For Information about Examinations : We have 2 mid exams ever semester and at last we have semester examination in mid examination we have to get 14 out of 40 with internals so that you can be able to write semester examination , the average of mids is checked and it should be minimum 14 , for writing supplmentary examination if you fail you have to pay 365 rupees for 1 Subject and +100 rupees per subject till 3 backlogs, if you want to reattempt all of the subjects in the semester you have to pay rupees 765 for the same.
+
+Also Provide them information about placements when asked ! 
+
+Head of Training and Pacement Cell: Dr. B. Vishnu Vardhan
+
+<<<<<<< HEAD
  
+=======
+
+
+Top Recruiters: 
+
+De Shaw & CO, Goldman sachs, f5, oracle , wells farago, math works , Sahaj software, tera data , darwinbox , quantium , AMD, accenture , amazon , adapt, ashok leyland, Belcan, Bosch, Barclays, Cognizant
+
+>>>>>>> 101568e55a50112c8a4cd0a8c29354a8c5cbf23d
 `
 
 export const runtime = 'edge'
