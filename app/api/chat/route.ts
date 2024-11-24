@@ -1,7 +1,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import { GoogleGenerativeAIStream, StreamingTextResponse } from 'ai'
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyAF-0yDJVZVJMVey8e2b6aquNWfDJoBnww')
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyA3kaq4p4aTgGALfLA6XgbiWJ1xpUVZ5fs')
 
 // Custom instructions and data
 const customInstructions = `
@@ -106,10 +106,7 @@ Current Vice Chancellor : Professor Katta Narasimha Reddy is the Vice-Chancellor
 
 Head of the Department Department of Civil Engineering: Dr. B Dean Kumar
 
-
-
-
-
+ 
 `
 
 export const runtime = 'edge'
