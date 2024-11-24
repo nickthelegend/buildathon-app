@@ -176,20 +176,40 @@ export default function ChatComponent() {
           ) : (
             // Display messages when there are messages in the array
             <div className="space-y-4">
-              {messages.map((message) => (
-                <div
-                  key={message.id}
-                  className={cn(
-                    "flex w-max max-w-[75%] flex-col gap-2 rounded-lg px-3 py-2 text-sm",
-                    message.role === "user"
-                      
-                      ? "ml-auto bg-primary text-primary-foreground"
-                      : "bg-muted dark:bg-gray-700"
-                  )}
-                >
-                  <ReactMarkdown>{message.content}</ReactMarkdown>
-                </div>
-              ))}
+               {messages.map((message) => {
+    // Check if the message contains a Google Maps URL
+    const mapUrlMatch = message.content.match(/https:\/\/maps\.google\.com\/\?q=([\d.-]+),([\d.-]+)/);
+    
+    // Extract coordinates if present
+    const coordinates = mapUrlMatch ? { lat: mapUrlMatch[1], lng: mapUrlMatch[2] } : null;
+
+    return (
+      <div
+        key={message.id}
+        className={cn(
+          "flex w-max max-w-[75%] flex-col gap-2 rounded-lg px-3 py-2 text-sm",
+          message.role === "user"
+            ? "ml-auto bg-primary text-primary-foreground"
+            : "bg-muted dark:bg-gray-700"
+        )}
+      >
+        <ReactMarkdown>{message.content}</ReactMarkdown>
+        
+        {coordinates && (
+          <div className="mt-2">
+            <iframe
+              width="100%"
+              height="200"
+              src={`https://maps.google.com/maps?q=${coordinates.lat},${coordinates.lng}&hl=en&z=14&output=embed`}
+              frameBorder="0"
+              scrolling="no"
+              className="rounded-lg"
+            ></iframe>
+          </div>
+        )}
+      </div>
+    );
+  })}
             </div>
           )}
         </ScrollArea>
