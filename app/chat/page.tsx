@@ -112,8 +112,9 @@ export default function ChatComponent() {
 
       {/* Main content area */}
       <main className="flex flex-col flex-1 overflow-hidden">
-        <header className="flex items-center justify-between px-4 py-2 border-b bg-primary/10 dark:bg-gray-700">
-          <div className="flex items-center">
+  <header className="flex items-center justify-between px-4 py-2 border-b bg-primary/10 dark:bg-gray-700">
+    {/* Add header code if necessary */}
+    <div className="flex items-center">
             {/* Menu button for mobile */}
             <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
               <SheetTrigger asChild>
@@ -150,100 +151,99 @@ export default function ChatComponent() {
           <Button variant="ghost" size="icon" onClick={toggleTheme}>
             {isDarkTheme ? <Sun className="h-6 w-6" /> : <Moon className="h-6 w-6" />}
           </Button>
-        </header>
+            </header>
 
-        <ScrollArea className="flex-1 p-4 overflow-y-auto" ref={scrollAreaRef}>
-          {messages.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-full text-center">
-              {/* Centered "JNTU BOT" text */}
-              <AudiowideText text="JNTUH" />
-              <div className="px-4 py-2 border-t bg-muted/50 dark:bg-gray-700 rounded-lg">
-                <h2 className="text-sm font-semibold mb-2">Frequently Asked Questions:</h2>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {prewrittenQuestions.map((question, index) => (
-                    <Button
-                      key={index}
-                      variant="outline"
-                      size="sm"
-                      onClick={() => handleQuestionClick(question)}
-                    >
-                      {question}
-                    </Button>
-                  ))}
-                </div>
-              </div>
+  <div className="flex flex-1 flex-col overflow-hidden">
+    {/* Ensure ScrollArea has proper height and overflow handling */}
+    <ScrollArea className="flex-1 p-4 overflow-y-auto" ref={scrollAreaRef}>
+      {messages.length === 0 ? (
+        <div className="flex flex-col items-center justify-center h-full text-center">
+          <AudiowideText text="JNTUH" />
+          <div className="px-4 py-2 border-t bg-muted/50 dark:bg-gray-700 rounded-lg">
+            <h2 className="text-sm font-semibold mb-2">Frequently Asked Questions:</h2>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {prewrittenQuestions.map((question, index) => (
+                <Button
+                  key={index}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => handleQuestionClick(question)}
+                >
+                  {question}
+                </Button>
+              ))}
             </div>
-          ) : (
-            // Display messages when there are messages in the array
-            <div className="space-y-4">
-  {messages.map((message) => {
-    // Check if the message contains a Google Maps URL
-    const mapUrlMatch = message.content.match(/https:\/\/maps\.google\.com\/\?q=([\d.-]+),([\d.-]+)/);
-    
-    // Extract coordinates if present
-    const coordinates = mapUrlMatch ? { lat: mapUrlMatch[1], lng: mapUrlMatch[2] } : null;
-
-    // Check if the message contains an image URL
-    const imageUrlMatch = message.content.match(/https:\/\/.*\.(?:png|jpg|jpeg|gif)/);
-
-    return (
-      <div
-        key={message.id}
-        className={cn(
-          "flex w-max max-w-[75%] flex-col gap-2 rounded-lg px-3 py-2 text-sm",
-          message.role === "user"
-            ? "ml-auto bg-primary text-primary-foreground"
-            : "bg-muted dark:bg-gray-700"
-        )}
-      >
-        {/* Render message content */}
-        <ReactMarkdown>{message.content}</ReactMarkdown>
-        
-        {/* Render Google Maps iframe if coordinates are present */}
-        {coordinates && (
-          <div className="mt-2">
-            <iframe
-              width="100%"
-              height="200"
-              src={`https://maps.google.com/maps?q=${coordinates.lat},${coordinates.lng}&hl=en&z=14&output=embed`}
-              frameBorder="0"
-              scrolling="no"
-              className="rounded-lg"
-            ></iframe>
           </div>
-        )}
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {messages.map((message) => {
+            const mapUrlMatch = message.content.match(/https:\/\/maps\.google\.com\/\?q=([\d.-]+),([\d.-]+)/);
+            const coordinates = mapUrlMatch ? { lat: mapUrlMatch[1], lng: mapUrlMatch[2] } : null;
+            const imageUrlMatch = message.content.match(/https:\/\/.*\.(?:png|jpg|jpeg|gif)/);
 
-        {/* Render image if the message contains an image URL */}
-        {imageUrlMatch && (
-          <div className="mt-2">
-            <img
-              src={imageUrlMatch[0]}
-              alt="Embedded content"
-              className="rounded-lg max-w-full"
-            />
-          </div>
-        )}
-      </div>
-    );
-  })}
-</div>
+            return (
+              <div
+                key={message.id}
+                className={cn(
+                  "flex flex-col gap-2 rounded-lg px-3 py-2 text-sm max-w-sm",
+                  message.role === "user"
+                    ? "ml-auto bg-primary text-primary-foreground"
+                    : "bg-muted dark:bg-gray-700"
+                )}
+                style={{ wordBreak: "break-word" }}
+              >
+                <ReactMarkdown>{message.content}</ReactMarkdown>
 
-          )}
-        </ScrollArea>
+                {coordinates && (
+                  <div className="mt-2">
+                    <iframe
+                      width="100%"
+                      height="200"
+                      src={`https://maps.google.com/maps?q=${coordinates.lat},${coordinates.lng}&hl=en&z=14&output=embed`}
+                      frameBorder="0"
+                      scrolling="no"
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
+                )}
 
-        <form onSubmit={handleSubmit} className="flex items-center p-4 border-t">
-          <Input
-            className="flex-1 mr-2 bg-background text-foreground dark:bg-gray-700 dark:text-white"
-            placeholder="Type your message..."
-            value={input}
-            onChange={handleInputChange}
-          />
-          <Button type="submit" size="icon" className="bg-primary text-primary-foreground">
-            <Send className="w-4 h-4" />
-            <span className="sr-only">Send</span>
-          </Button>
-        </form>
-      </main>
+                {imageUrlMatch && (
+                  <div className="mt-2">
+                    <img
+                      src={imageUrlMatch[0]}
+                      alt="Embedded content"
+                      className="rounded-lg max-w-full"
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </ScrollArea>
+
+    <form
+      onSubmit={handleSubmit}
+      className="flex items-center p-4 border-t bg-background dark:bg-gray-700"
+      style={{ flexShrink: 0 }} // Prevents the input from being pushed
+    >
+      <Input
+        className="flex-1 mr-2 bg-background text-foreground dark:bg-gray-700 dark:text-white"
+        placeholder="Type your message..."
+        value={input}
+        onChange={handleInputChange}
+      />
+      <Button type="submit" size="icon" className="bg-primary text-primary-foreground">
+        <Send className="w-4 h-4" />
+        <span className="sr-only">Send</span>
+      </Button>
+    </form>
+  </div>
+</main>
+
+
     </div>
   )
 }
