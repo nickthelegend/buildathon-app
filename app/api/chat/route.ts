@@ -7,6 +7,7 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_AI_API_KEY || 'AIzaSyA3k
 const customInstructions = `
 You are an AI assistant for a Jawaharlal Nehru Technological University. Only answer questions related to this university.
 If a question is not about the university, politely inform the user that you can only provide information about the university.
+If you are asked about the faculty and the head of the department you should give the URL of the image in the answer.
 `
 
 const universityData = `
@@ -98,29 +99,40 @@ URL: https://maps.google.com/?q=17.48988646114701,78.38966029073153
 
 
 Current Principal:Dr. G Venkata Narasimha Reddy
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1719896111-avatar.jpeg
 B.Tech.(RECW), M.Tech.(KREC), Ph.D.(JNTUH), Post Doc.(FIU, USA),MIGS, AMIE, MISTE, C. Eng, MISSMGE
 Professor of Civil Engineering and Principal
 
 Current Vice Chancellor : Professor Katta Narasimha Reddy is the Vice-Chancellor of Jawaharlal Nehru Technological University (JNTU) in Hyderabad as of July 2021. The Governor of Telangana is the university's Chancellor. 
-
+Image URL:http://jntuhaac.in/Content/images/Katta_Narasimha_Reddy_vice_chancellor_jntuh.jpg
 
 Head of the Department of Civil Engineering: Dr. B Dean Kumar
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1687064111-avatar.jpg "GIVE THE image"
 
 Head of the Department of Electrical and Electronics Engineering: Dr. K. Bhaskar
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1705044254-avatar.jpg
 
 Head of the Department of Mechanical Engineering: Dr. E Ramjee
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/E._Ramjee_.jpg
 
 Head of Department of Electronics and Communication Engineering: Dr. A Rajani
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1674363828-avatar.jpeg
 
 Head of Department of Computer Science and Engineering: Dr. K P Supreethi
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/14520510_1083786028383684_1206266654944611288_n.jpg
+
 
 Head of Department of Metallurgical Engineering: Dr. B Ramesh Chandra
+https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/E._Ramjee_.jpg
 
 Head of Department of Physics: Dr. T Srikanth
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1677765751-avatar.jpeg
 
 Head of Department of Chemistry: Dr. Boodida Sathyanarayana
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1677943051-avatar.jpg
 
 Head of Department of Humanities and Social Sciences: Dr. N V S N Lakshmi
+Image URL: https://jntuhceh.ac.in/faculty_portal/uploads/staff_photos/1580454628-avatar.jpg
 
 For Information about Examinations : We have 2 mid exams ever semester and at last we have semester examination in mid examination we have to get 14 out of 40 with internals so that you can be able to write semester examination , the average of mids is checked and it should be minimum 14 , for writing supplmentary examination if you fail you have to pay 365 rupees for 1 Subject and +100 rupees per subject till 3 backlogs, if you want to reattempt all of the subjects in the semester you have to pay rupees 765 for the same.
 
@@ -128,16 +140,12 @@ Also Provide them information about placements when asked !
 
 Head of Training and Pacement Cell: Dr. B. Vishnu Vardhan
 
-<<<<<<< HEAD
- 
-=======
 
 
 Top Recruiters: 
 
 De Shaw & CO, Goldman sachs, f5, oracle , wells farago, math works , Sahaj software, tera data , darwinbox , quantium , AMD, accenture , amazon , adapt, ashok leyland, Belcan, Bosch, Barclays, Cognizant
 
->>>>>>> 101568e55a50112c8a4cd0a8c29354a8c5cbf23d
 `
 
 export const runtime = 'edge'

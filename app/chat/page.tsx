@@ -176,12 +176,15 @@ export default function ChatComponent() {
           ) : (
             // Display messages when there are messages in the array
             <div className="space-y-4">
-               {messages.map((message) => {
+  {messages.map((message) => {
     // Check if the message contains a Google Maps URL
     const mapUrlMatch = message.content.match(/https:\/\/maps\.google\.com\/\?q=([\d.-]+),([\d.-]+)/);
     
     // Extract coordinates if present
     const coordinates = mapUrlMatch ? { lat: mapUrlMatch[1], lng: mapUrlMatch[2] } : null;
+
+    // Check if the message contains an image URL
+    const imageUrlMatch = message.content.match(/https:\/\/.*\.(?:png|jpg|jpeg|gif)/);
 
     return (
       <div
@@ -193,8 +196,10 @@ export default function ChatComponent() {
             : "bg-muted dark:bg-gray-700"
         )}
       >
+        {/* Render message content */}
         <ReactMarkdown>{message.content}</ReactMarkdown>
         
+        {/* Render Google Maps iframe if coordinates are present */}
         {coordinates && (
           <div className="mt-2">
             <iframe
@@ -207,10 +212,22 @@ export default function ChatComponent() {
             ></iframe>
           </div>
         )}
+
+        {/* Render image if the message contains an image URL */}
+        {imageUrlMatch && (
+          <div className="mt-2">
+            <img
+              src={imageUrlMatch[0]}
+              alt="Embedded content"
+              className="rounded-lg max-w-full"
+            />
+          </div>
+        )}
       </div>
     );
   })}
-            </div>
+</div>
+
           )}
         </ScrollArea>
 
